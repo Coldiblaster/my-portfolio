@@ -1,0 +1,31 @@
+{
+  "extends": [
+    "@rocketseat/eslint-config/react"
+  ],
+  "plugins": [
+    "simple-import-sort"
+  ],
+  "rules": {
+    "simple-import-sort/imports": "error",
+    "react-hooks/exhaustive-deps": "off",
+    "camelcase": "off",
+    "prettier/prettier": [
+      "warn",
+      {
+        "plugins": [
+          "prettier-plugin-tailwindcss"
+        ],
+        "trailingComma": "all",
+        "arrowParens": "avoid",
+        "tabWidth": 2,
+        "endOfLine": "auto",
+        "printWidth": 80,
+        "singleQuote": true,
+        "tailwindFunctions": [
+          "cva",
+          "cx"
+        ]
+      }
+    ]
+  }
+}
