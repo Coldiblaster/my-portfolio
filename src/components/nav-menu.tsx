@@ -50,7 +50,11 @@ export function NavMenu() {
           ))}
           <ThemeToggle />
           <Button asChild>
-            <Link href="/curriculum-vinicius-bastazin.pdf" target="_blank">
+            <Link
+              href="/documents/curriculum-vinicius-bastazin.pdf"
+              target="_blank"
+              passHref
+            >
               Download CV
             </Link>
           </Button>
