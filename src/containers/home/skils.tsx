@@ -70,7 +70,7 @@ export const Skills = () => {
     <TooltipProvider>
       <section id="skills" ref={sectionRef} className="flex min-h-screen py-24">
         <div className="mx-auto max-w-4xl">
-          <div className="mb-8 text-center">
+          <div className="mb-8 animate-fade-right text-center">
             <Badge variant="secondary" className="mb-4">
               Skills
             </Badge>
@@ -133,6 +133,7 @@ export const Skills = () => {
             open={isOpen}
             onOpenChange={handleToggle}
             ref={additionalSkillsRef}
+            className="animate-fade-left animate-delay-500"
           >
             <CollapsibleTrigger asChild>
               <Button
