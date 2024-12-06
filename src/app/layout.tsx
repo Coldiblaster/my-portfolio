@@ -4,8 +4,10 @@ import { Analytics } from '@vercel/analytics/next';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import type { Metadata, Viewport } from 'next';
 import { Inter } from 'next/font/google';
+import { Suspense } from 'react';
 
 import { Footer } from '@/components/footer';
+import { LoadingPage } from '@/components/loading-page';
 import { NavMenu } from '@/components/nav-menu';
 import { ScrollToTop } from '@/components/scroll-to-top';
 
@@ -66,15 +68,17 @@ export default function RootLayout({
   return (
     <html lang="pt-br" className={inter.className}>
       <body className="min-h-screen antialiased">
-        <Providers>
-          <NavMenu />
-          {children}
-          <Footer />
-        </Providers>
+        <Suspense fallback={<LoadingPage />}>
+          <Providers>
+            <NavMenu />
+            {children}
+            <Footer />
+          </Providers>
 
-        <SpeedInsights />
-        <Analytics />
-        <ScrollToTop />
+          <SpeedInsights />
+          <Analytics />
+          <ScrollToTop />
+        </Suspense>
       </body>
     </html>
   );
