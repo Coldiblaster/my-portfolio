@@ -32,7 +32,7 @@ export const Experience = () => {
     : experiences.slice(0, 3);
 
   return (
-    <section id="experience" className="min-h-screen px-4 py-24" ref={ref}>
+    <section id="experience" className="py-24" ref={ref}>
       <div className="mx-auto max-w-3xl space-y-6">
         <div
           className={`${isInView ? 'mb-8 animate-fade-down text-center' : 'hidden'}`}
@@ -51,7 +51,7 @@ export const Experience = () => {
               key={index}
               className={`${isInView ? 'animate-fade-left bg-secondary/50' : 'hidden'}`}
               style={{
-                animationDelay: `${index * 0.2}s`, // Atraso progressivo
+                animationDelay: `${index * 0.1}s`, // Atraso progressivo
               }}
             >
               <CardContent className="p-6">

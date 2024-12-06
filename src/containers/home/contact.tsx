@@ -8,6 +8,11 @@ import { useRef, useState } from 'react';
 
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from '@/components/ui/tooltip';
 
 export const Contact = () => {
   const ref = useRef(null);
@@ -36,7 +41,7 @@ export const Contact = () => {
     <section
       id="contact"
       ref={ref}
-      className="flex min-h-screen items-center justify-center px-4 py-24"
+      className="flex items-center justify-center py-24"
     >
       <div className="mx-auto max-w-2xl space-y-8 text-center">
         <div className={`${isInView ? 'animate-fade-down' : 'hidden'}`}>
@@ -74,7 +79,24 @@ export const Contact = () => {
             className={`${isInView ? 'flex animate-fade-left items-center justify-center gap-2 animate-delay-150' : 'hidden'}`}
           >
             <Phone className="h-6 w-6" />
-            <span className="text-xl font-semibold">+55 18 988111220</span>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <Link
+                  href="https://wa.me/5518988111220?text=Olá%20[Seu%20Nome]!%20Encontrei%20seu%20portfólio%20e%20gostaria%20de%20saber%20mais%20sobre%20seus%20serviços%20de%20front-end.%20Podemos%20conversar?"
+                  target="_blank"
+                >
+                  <span className="text-xl font-semibold">
+                    +55 18 988111220
+                  </span>
+                </Link>
+              </TooltipTrigger>
+              <TooltipContent>
+                <p>
+                  Clique no número para enviar uma mensagem direto no whats-app
+                </p>
+              </TooltipContent>
+            </Tooltip>
+
             <Button
               variant="ghost"
               size="icon"

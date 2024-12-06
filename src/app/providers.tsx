@@ -1,6 +1,7 @@
 'use client';
 
 import { ThemeProvider } from '@/components/theme/theme-provider';
+import { TooltipProvider } from '@/components/ui/tooltip';
 
 interface ProvidersProps {
   children: React.ReactNode;
@@ -9,7 +10,7 @@ interface ProvidersProps {
 export function Providers({ children }: ProvidersProps) {
   return (
     <ThemeProvider defaultTheme="dark" storageKey="mind-schedule-theme">
-      {children}
+      <TooltipProvider>{children}</TooltipProvider>
     </ThemeProvider>
   );
 }

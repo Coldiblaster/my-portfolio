@@ -21,7 +21,7 @@ export const Portfolio = () => {
   const isInView = useInView(ref, { once: true, amount: 0.5 });
 
   return (
-    <section id="work" className="px-4 py-24" ref={ref}>
+    <section id="work" className="py-24" ref={ref}>
       <div className="mx-auto max-w-6xl space-y-6">
         <div className="mb-8 text-center">
           <Badge variant="secondary" className="mb-4">
@@ -53,6 +53,7 @@ export const Portfolio = () => {
                             src={project.image}
                             alt={project.title}
                             fill
+                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                             quality={100}
                             className="z-0 h-full min-h-full rounded-2xl object-cover object-left"
                           />
@@ -119,6 +120,7 @@ export const Portfolio = () => {
                             src={project.image}
                             alt={project.title}
                             fill
+                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                             quality={100}
                             className="z-0 h-full min-h-full rounded-2xl object-cover object-left"
                           />

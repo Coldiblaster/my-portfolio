@@ -17,10 +17,10 @@ export const Hero = () => {
           </h1>
           <p className="animate-fade-right animate-delay-100">
             Sou um desenvolvedor full stack (React.js e Node.js) com foco na
-            criação (e ocasionalmente no design) de experiências digitais
-            excepcionais que sejam rápidas, acessíveis, visualmente atraentes e
-            responsivas. Embora eu crie aplicações web há mais de 7 anos, ainda
-            adoro isso como se fosse algo novo.
+            criação de experiências digitais excepcionais que sejam rápidas,
+            acessíveis, visualmente atraentes e responsivas. Embora eu crie
+            aplicações web há mais de 6 anos, ainda adoro isso como se fosse
+            algo novo.
           </p>
         </div>
 
