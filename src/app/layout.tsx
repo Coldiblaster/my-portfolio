@@ -28,9 +28,9 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   title:
-    'Vinícius Bastazin || Desenvolvedor Full Stack Freelancer - React, Next.js, React Native',
+    'Vinícius Bastazin || Desenvolvedor Frontend - React, Next.js, React Native',
   description:
-    'Vinícius Bastazin é desenvolvedor Full Stack com mais de 6 anos de experiência, especializado em React, Next.js, APIs escaláveis e otimização de performance. Freelance em soluções web e mobile.',
+    'Site profissional de Vinícius Bastazin. Freelancer Frontend com mais de 6 anos de experiência, especializado em React, Next.js, APIs escaláveis e otimização de performance. Freelance em soluções web e mobile.',
   keywords:
     'desenvolvedor de software, freelancer React, freelancer front-end, freelancer React Native, Next.js, desenvolvimento de sites, APIs escaláveis, otimização de performance, SEO, desenvolvimento de aplicativos móveis, desenvolvimento web, integração com CMS, Prismic, Firebase, Tailwind CSS, Styled Components, desenvolvimento responsivo, desenvolvimento de sistemas, criação de aplicativos, testes unitários, gerenciamento de estado, micro front-end, monorepo, AWS, Google Cloud, Docker, TypeScript, Node.js, Nest.js, GraphQL, RESTful APIs, Scrum, Kanban, desenvolvedor de interfaces reativas, React Hooks, Figma, desenvolvimento ágil.',
   robots: 'index, follow',
@@ -40,11 +40,15 @@ export const metadata: Metadata = {
       'Portfólio de Vinícius Bastazin, desenvolvedor especializado em React.js, Next.js, React Native e soluções web personalizadas. Oferecendo serviços de desenvolvimento front-end, back-end, APIs e design de interfaces.',
     images: ['https://viniciusbastazin.vercel.app/avatar-desk.png'], // Coloque a URL da imagem de perfil ou logo
     url: 'https://viniciusbastazin.vercel.app/',
-    siteName: 'Vinícius Bastazin - Portfólio',
-    type: 'profile',
-    firstName: 'Vinícius',
-    lastName: 'Bastazin',
+    siteName: 'viniciusbastazin',
+    type: 'website',
+    locale: 'pt_BR',
   },
+  authors: [
+    { name: 'Vinícius Bastazin', url: 'https://viniciusbastazin.vercel.app/' },
+  ],
+  appleWebApp: true,
+  applicationName: 'Vinícius Bastazin',
 };
 
 export default function RootLayout({
