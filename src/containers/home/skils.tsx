@@ -91,7 +91,10 @@ export const Skills = () => {
               defaultValue={selectedCategory}
               onValueChange={e => setSelectedCategory(e)}
             >
-              <SelectTrigger className="w-full md:w-[180px]">
+              <SelectTrigger
+                aria-label="Selecionar categoria de conteúdo"
+                className="w-full md:w-[180px]"
+              >
                 <SelectValue placeholder="Todas categoria" defaultValue="all" />
               </SelectTrigger>
               <SelectContent>

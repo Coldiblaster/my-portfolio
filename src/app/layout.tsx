@@ -23,7 +23,7 @@ export const viewport: Viewport = {
   width: 'device-width',
   height: 'device-height',
   minimumScale: 1,
-  maximumScale: 1,
+  maximumScale: 5, // Permite zoom até 5x
 };
 
 export const metadata: Metadata = {
@@ -37,10 +37,17 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Vinícius Bastazin - Desenvolvedor Full Stack Freelancer',
     description:
-      'Portfólio de Vinícius Bastazin, desenvolvedor especializado em React.js, Next.js, React Native e soluções web personalizadas. Oferecendo serviços de desenvolvimento front-end, back-end, APIs e design de interfaces.',
-    images: ['https://viniciusbastazin.vercel.app/avatar-desk.png'], // Coloque a URL da imagem de perfil ou logo
+      'Portfólio de Vinícius Bastazin, desenvolvedor especializado em React.js, Next.js, React Native e soluções web personalizadas.',
+    images: [
+      {
+        url: 'https://viniciusbastazin.vercel.app/avatar-desk.png',
+        alt: 'Foto de Vinícius Bastazin - Desenvolvedor Full Stack Freelancer',
+        width: 1200,
+        height: 630,
+      },
+    ],
     url: 'https://viniciusbastazin.vercel.app/',
-    siteName: 'viniciusbastazin',
+    siteName: 'Vinícius Bastazin',
     type: 'website',
     locale: 'pt_BR',
   },
