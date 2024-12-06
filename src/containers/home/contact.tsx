@@ -1,16 +1,21 @@
 'use client';
 
+import { useInView } from 'framer-motion';
 import { Check, Copy, Mail, Phone } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 
 export const Contact = () => {
+  const ref = useRef(null);
+
   const [copiedEmail, setCopiedEmail] = useState(false);
   const [copiedPhone, setCopiedPhone] = useState(false);
+
+  const isInView = useInView(ref, { once: true, amount: 0.5 });
 
   const copyToClipboard = async (text: string, type: 'email' | 'phone') => {
     try {
@@ -28,9 +33,13 @@ export const Contact = () => {
   };
 
   return (
-    <section id="contact" className="px-4 py-24">
+    <section
+      id="contact"
+      ref={ref}
+      className="flex min-h-screen items-center justify-center px-4 py-24"
+    >
       <div className="mx-auto max-w-2xl space-y-8 text-center">
-        <div>
+        <div className={`${isInView ? 'animate-fade-down' : 'hidden'}`}>
           <Badge variant="secondary" className="mb-4">
             Contato
           </Badge>
@@ -42,7 +51,9 @@ export const Contact = () => {
         </div>
 
         <div className="space-y-4">
-          <div className="flex items-center justify-center gap-2">
+          <div
+            className={`${isInView ? 'flex animate-fade-right items-center justify-center gap-2 animate-delay-100' : 'hidden'}`}
+          >
             <Mail className="h-6 w-6" />
             <span className="text-xl font-semibold">vbastazin@gmail.com</span>
             <Button
@@ -59,7 +70,9 @@ export const Contact = () => {
             </Button>
           </div>
 
-          <div className="flex items-center justify-center gap-2">
+          <div
+            className={`${isInView ? 'flex animate-fade-left items-center justify-center gap-2 animate-delay-150' : 'hidden'}`}
+          >
             <Phone className="h-6 w-6" />
             <span className="text-xl font-semibold">+55 18 988111220</span>
             <Button
@@ -77,7 +90,9 @@ export const Contact = () => {
           </div>
         </div>
 
-        <div className="space-y-4">
+        <div
+          className={`${isInView ? 'animate-fade-up space-y-4 animate-delay-300' : 'hidden'}`}
+        >
           <p className="text-muted-foreground">
             Você também pode me encontrar nessas plataformas!
           </p>

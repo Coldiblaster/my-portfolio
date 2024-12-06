@@ -1,8 +1,9 @@
 'use client';
 
+import { useInView } from 'framer-motion';
 import { ChevronDown, ChevronUp } from 'lucide-react';
 import Image from 'next/image';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 
 import { useTheme } from '@/components/theme/theme-provider';
 import { Badge } from '@/components/ui/badge';
@@ -16,6 +17,10 @@ export const Experience = () => {
   const [expandedExperiences, setExpandedExperiences] = useState<number[]>([]);
   const [showAllExperiences, setShowAllExperiences] = useState(false);
 
+  const ref = useRef(null);
+
+  const isInView = useInView(ref, { once: true, amount: 0.5 });
+
   const toggleExperience = (index: number) => {
     setExpandedExperiences(prev =>
       prev.includes(index) ? prev.filter(i => i !== index) : [...prev, index],
@@ -27,9 +32,11 @@ export const Experience = () => {
     : experiences.slice(0, 3);
 
   return (
-    <section id="experience" className="min-h-screen px-4 py-24">
+    <section id="experience" className="min-h-screen px-4 py-24" ref={ref}>
       <div className="mx-auto max-w-3xl space-y-6">
-        <div className="mb-8 text-center">
+        <div
+          className={`${isInView ? 'mb-8 animate-fade-down text-center' : 'hidden'}`}
+        >
           <Badge variant="secondary" className="mb-4">
             Experiência
           </Badge>
@@ -40,7 +47,13 @@ export const Experience = () => {
 
         <div className="space-y-6">
           {visibleExperiences.map((experience, index) => (
-            <Card key={index} className="bg-secondary/50">
+            <Card
+              key={index}
+              className={`${isInView ? 'animate-fade-left bg-secondary/50' : 'hidden'}`}
+              style={{
+                animationDelay: `${index * 0.2}s`, // Atraso progressivo
+              }}
+            >
               <CardContent className="p-6">
                 <div className="flex items-start justify-between">
                   <div className="flex items-center gap-4">
@@ -105,7 +118,9 @@ export const Experience = () => {
         </div>
 
         {experiences.length > 3 && (
-          <div className="mt-6 text-center">
+          <div
+            className={`${isInView ? 'mt-6 animate-fade-up text-center animate-delay-700' : 'hidden'}`}
+          >
             <Button
               variant="outline"
               onClick={() => setShowAllExperiences(!showAllExperiences)}

@@ -1,9 +1,10 @@
 'use client';
 
+import { useInView } from 'framer-motion';
 import { ChevronDown, ChevronUp, LinkIcon } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -11,12 +12,16 @@ import { Card, CardContent } from '@/components/ui/card';
 import { projects } from '@/data/portfolio';
 
 export const Portfolio = () => {
+  const ref = useRef(null);
+
   const [showAllProjects, setShowAllProjects] = useState(false);
 
   const visibleProjects = showAllProjects ? projects : projects.slice(0, 2);
 
+  const isInView = useInView(ref, { once: true, amount: 0.5 });
+
   return (
-    <section id="work" className="px-4 py-24">
+    <section id="work" className="px-4 py-24" ref={ref}>
       <div className="mx-auto max-w-6xl space-y-6">
         <div className="mb-8 text-center">
           <Badge variant="secondary" className="mb-4">
@@ -29,10 +34,16 @@ export const Portfolio = () => {
 
         <div className="space-y-6">
           {visibleProjects.map((project, index) => (
-            <Card key={index} className="overflow-hidden bg-secondary/50">
+            <Card
+              key={index}
+              className={`${isInView ? 'animate-fade-right overflow-hidden bg-secondary/50 opacity-0' : 'hidden'}`}
+              style={{
+                animationDelay: `${index * 0.2}s`, // Atraso progressivo
+              }}
+            >
               <CardContent className="p-0">
                 <div
-                  className={`flex h-full w-full flex-col items-center md:flex-row ${index % 2 !== 0 && 'flex-col-reverse'} `}
+                  className={`flex h-full w-full flex-col items-center md:flex-row ${index % 2 !== 0 && 'flex-col-reverse'}`}
                 >
                   {index % 2 === 0 ? (
                     <>
@@ -43,7 +54,7 @@ export const Portfolio = () => {
                             alt={project.title}
                             fill
                             quality={100}
-                            className="z-0 h-full min-h-full rounded-2xl object-cover object-left" // Adicionado rounded-2xl
+                            className="z-0 h-full min-h-full rounded-2xl object-cover object-left"
                           />
                         </div>
                       </div>
@@ -109,7 +120,7 @@ export const Portfolio = () => {
                             alt={project.title}
                             fill
                             quality={100}
-                            className="z-0 h-full min-h-full rounded-2xl object-cover object-left" // Adicionado rounded-2xl
+                            className="z-0 h-full min-h-full rounded-2xl object-cover object-left"
                           />
                         </div>
                       </div>
@@ -122,7 +133,9 @@ export const Portfolio = () => {
         </div>
 
         {projects.length > 2 && (
-          <div className="mt-8 text-center">
+          <div
+            className={`${isInView ? 'mt-8 animate-fade-up text-center animate-delay-700' : 'hidden'}`}
+          >
             <Button
               variant="outline"
               onClick={() => setShowAllProjects(!showAllProjects)}

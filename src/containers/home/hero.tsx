@@ -9,13 +9,13 @@ export const Hero = () => {
     <div className="container mx-auto flex flex-col-reverse items-center justify-center gap-12 md:h-[calc(100vh-65px)] md:flex-row md:justify-between md:gap-24">
       <div className="flex max-w-3xl flex-col justify-center gap-12">
         <div className="flex flex-col gap-2">
-          <h1 className="flex gap-2 text-3xl font-bold md:text-6xl">
+          <h1 className="flex animate-fade-down gap-2 text-3xl font-bold animate-delay-75 md:text-6xl">
             Olá, sou o Vinícius
             <div className="animate-wiggle animate-infinite animate-ease-in">
               👋
             </div>
           </h1>
-          <p>
+          <p className="animate-fade-right animate-delay-100">
             Sou um desenvolvedor full stack (React.js e Node.js) com foco na
             criação (e ocasionalmente no design) de experiências digitais
             excepcionais que sejam rápidas, acessíveis, visualmente atraentes e
@@ -24,7 +24,7 @@ export const Hero = () => {
           </p>
         </div>
 
-        <div className="flex flex-col gap-2 text-foreground">
+        <div className="flex animate-fade-up flex-col gap-2 text-foreground animate-delay-100">
           <div className="flex items-center gap-2">
             <LucideMapPin className="h-5 w-5" />
             <span className="text-sm">Presidente Prudente, São Paulo</span>
@@ -40,7 +40,7 @@ export const Hero = () => {
           </div>
         </div>
 
-        <div className="flex items-center gap-3">
+        <div className="flex animate-fade-up items-center gap-3 animate-delay-100">
           <Button variant="link" className="px-0" asChild>
             <Link href="https://github.com/Coldiblaster" target="_blank">
               <Image
@@ -72,7 +72,7 @@ export const Hero = () => {
         width={350}
         height={350}
         alt="Minha imagem de perfil"
-        className="w-[250px] md:w-[350px]"
+        className="w-[250px] animate-fade-left animate-delay-300 md:w-[350px]"
       />
     </div>
   );
