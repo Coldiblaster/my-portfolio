@@ -32,7 +32,7 @@ export const Experience = () => {
     : experiences.slice(0, 3);
 
   return (
-    <section id="experience" className="py-24" ref={ref}>
+    <section id="experience" className="min-h-screen py-20" ref={ref}>
       <div className="mx-auto max-w-3xl space-y-6">
         <div
           className={`${isInView ? 'mb-8 animate-fade-down text-center' : 'hidden'}`}

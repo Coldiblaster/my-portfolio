@@ -66,7 +66,7 @@ export const Skills = () => {
   };
 
   return (
-    <section id="skills" ref={sectionRef} className="flex py-24">
+    <section id="skills" ref={sectionRef} className="flex h-full py-20">
       <div className="mx-auto max-w-4xl">
         <div className="mb-8 animate-fade-right text-center">
           <Badge variant="secondary" className="mb-4">

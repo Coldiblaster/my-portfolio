@@ -21,7 +21,7 @@ export const Portfolio = () => {
   const isInView = useInView(ref, { once: true, amount: 0.5 });
 
   return (
-    <section id="work" className="py-24" ref={ref}>
+    <section id="work" className="min-h-screen py-20" ref={ref}>
       <div className="mx-auto max-w-6xl space-y-6">
         <div className="mb-8 text-center">
           <Badge variant="secondary" className="mb-4">

@@ -41,7 +41,7 @@ export const Contact = () => {
     <section
       id="contact"
       ref={ref}
-      className="flex items-center justify-center py-24"
+      className="flex h-screen items-center justify-center"
     >
       <div className="mx-auto max-w-2xl space-y-8 text-center">
         <div className={`${isInView ? 'animate-fade-down' : 'hidden'}`}>

@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 
 export const Hero = () => {
   return (
-    <div className="container mx-auto flex flex-col-reverse items-center justify-center gap-12 md:h-[calc(100vh-65px)] md:flex-row md:justify-between md:gap-24">
+    <section className="container mx-auto flex flex-col-reverse items-center justify-center gap-12 md:h-[calc(100vh-65px)] md:flex-row md:justify-between md:gap-24">
       <div className="flex max-w-3xl flex-col justify-center gap-12">
         <div className="flex flex-col gap-2">
           <h1 className="flex animate-fade-down gap-2 text-3xl font-bold animate-delay-75 md:text-6xl">
@@ -74,6 +74,6 @@ export const Hero = () => {
         alt="Minha imagem de perfil"
         className="w-[250px] animate-fade-left animate-delay-300 md:w-[350px]"
       />
-    </div>
+    </section>
   );
 };
