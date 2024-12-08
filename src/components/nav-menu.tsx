@@ -86,7 +86,15 @@ export function NavMenu() {
                     {item.label}
                   </a>
                 ))}
-                <Button className="mt-4">Download CV</Button>
+                <Button asChild>
+                  <Link
+                    href="/documents/curriculum-vinicius-bastazin.pdf"
+                    target="_blank"
+                    passHref
+                  >
+                    Download CV
+                  </Link>
+                </Button>
               </nav>
             </SheetContent>
           </Sheet>
