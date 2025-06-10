@@ -45,10 +45,10 @@ export const Contact = () => {
     >
       <div className="mx-auto max-w-2xl space-y-8 text-center">
         <div className={`${isInView ? 'animate-fade-down' : 'hidden'}`}>
-          <Badge variant="secondary" className="mb-4">
+          <Badge variant="outline" className="mb-4">
             Contato
           </Badge>
-          <p className="text-lg font-bold text-muted-foreground">
+          <p className="text-muted-foreground text-lg font-bold">
             O que vem a seguir? Sinta-se à vontade para entrar em contato comigo
             se estiver procurando um desenvolvedor, tem uma dúvida ou
             simplesmente deseja se conectar.
@@ -57,7 +57,7 @@ export const Contact = () => {
 
         <div className="space-y-4">
           <div
-            className={`${isInView ? 'flex animate-fade-right items-center justify-center gap-2 animate-delay-100' : 'hidden'}`}
+            className={`${isInView ? 'animate-fade-right animate-delay-100 flex items-center justify-center gap-2' : 'hidden'}`}
           >
             <Mail className="h-6 w-6" />
             <span className="text-xl font-semibold">vbastazin@gmail.com</span>
@@ -76,7 +76,7 @@ export const Contact = () => {
           </div>
 
           <div
-            className={`${isInView ? 'flex animate-fade-left items-center justify-center gap-2 animate-delay-150' : 'hidden'}`}
+            className={`${isInView ? 'animate-fade-left animate-delay-150 flex items-center justify-center gap-2' : 'hidden'}`}
           >
             <Phone className="h-6 w-6" />
             <Tooltip>
@@ -113,7 +113,7 @@ export const Contact = () => {
         </div>
 
         <div
-          className={`${isInView ? 'animate-fade-up space-y-4 animate-delay-300' : 'hidden'}`}
+          className={`${isInView ? 'animate-fade-up animate-delay-300 space-y-4' : 'hidden'}`}
         >
           <p className="text-muted-foreground">
             Você também pode me encontrar nessas plataformas!

@@ -9,6 +9,29 @@ interface Experience {
 
 export const experiences: Experience[] = [
   {
+    company: 'CI&T',
+    logo: '/experience/ci&t.svg',
+    logoDark: '/experience/ci&t.svg',
+    role: 'Analista de Sistemas Pl',
+    period: 'Jan 2025 - Atual',
+    responsibilities: [
+      'Responsável pela evolução e manutenção do site principal da empresa parceira, garantindo a estabilidade e inovação contínua.',
+      'Desenvolvimento frontend utilizando React, Next.js e GraphQL com foco em performance, responsividade e acessibilidade.',
+      'Análise de protótipos no Figma para garantir a fidelidade entre design e implementação.',
+      'Quebra de demandas complexas em tarefas menores e distribuição eficiente para a equipe.',
+      'Liderança técnica da equipe de frontend, promovendo boas práticas, organização e motivação do time.',
+      'Implementação de interfaces usáveis e intuitivas, aprimorando a experiência do usuário final.',
+      'Suporte técnico à equipe, auxiliando na organização de tarefas e resolução de dúvidas técnicas.',
+      'Garantia de boas práticas de desenvolvimento, incluindo qualidade do código e padrões de projeto.',
+      'Colaboração ativa no processo de revisão de código e feedbacks construtivos.',
+      'Trabalho em equipe promovendo a troca de conhecimentos e o crescimento coletivo.',
+      'Participação na definição e aplicação de padrões para melhorar a usabilidade e acessibilidade das aplicações.',
+      'Engajamento na busca por soluções eficientes, entregando funcionalidades com foco em qualidade e escalabilidade.',
+      'Monitoramento contínuo do funcionamento das interfaces e correção de bugs para garantir a melhor experiência possível.',
+      'Motivação constante para entregar produtos que gerem impacto positivo aos usuários e ao negócio.',
+    ],
+  },
+  {
     company: 'Silicon Village',
     logo: '/experience/silicon.svg',
     logoDark: '/experience/silicon.svg',

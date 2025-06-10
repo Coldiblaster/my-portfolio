@@ -24,10 +24,10 @@ export const Portfolio = () => {
     <section id="work" className="min-h-screen py-20" ref={ref}>
       <div className="mx-auto max-w-6xl space-y-6">
         <div className="mb-8 text-center">
-          <Badge variant="secondary" className="mb-4">
+          <Badge variant="outline" className="mb-4">
             Trabalhos
           </Badge>
-          <p className="text-lg font-bold text-muted-foreground">
+          <p className="text-muted-foreground text-lg font-bold">
             Alguns dos projetos notáveis que construí:
           </p>
         </div>
@@ -36,7 +36,7 @@ export const Portfolio = () => {
           {visibleProjects.map((project, index) => (
             <Card
               key={index}
-              className={`${isInView ? 'animate-fade-right overflow-hidden bg-secondary/50 opacity-0' : 'hidden'}`}
+              className={`${isInView ? 'animate-fade-right bg-secondary/50 overflow-hidden opacity-0' : 'hidden'}`}
               style={{
                 animationDelay: `${index * 0.2}s`, // Atraso progressivo
               }}
@@ -47,7 +47,7 @@ export const Portfolio = () => {
                 >
                   {index % 2 === 0 ? (
                     <>
-                      <div className="w-full flex-1 bg-secondary p-6">
+                      <div className="bg-secondary w-full flex-1 p-6">
                         <div className="relative min-h-[288px] flex-1">
                           <Image
                             src={project.image}
@@ -70,7 +70,7 @@ export const Portfolio = () => {
                           {project.technologies.map((tech, techIndex) => (
                             <Badge
                               key={techIndex}
-                              variant="secondary"
+                              variant="outline"
                               className="bg-secondary"
                             >
                               {tech}
@@ -80,7 +80,7 @@ export const Portfolio = () => {
                         <Link
                           href={project.link}
                           target="_blank"
-                          className="inline-flex items-center gap-2 text-muted-foreground transition-colors hover:text-primary"
+                          className="text-muted-foreground hover:text-primary inline-flex items-center gap-2 transition-colors"
                         >
                           <LinkIcon className="h-4 w-4" />
                         </Link>
@@ -99,7 +99,7 @@ export const Portfolio = () => {
                           {project.technologies.map((tech, techIndex) => (
                             <Badge
                               key={techIndex}
-                              variant="secondary"
+                              variant="outline"
                               className="bg-secondary"
                             >
                               {tech}
@@ -109,12 +109,12 @@ export const Portfolio = () => {
                         <Link
                           href={project.link}
                           target="_blank"
-                          className="inline-flex items-center gap-2 text-muted-foreground transition-colors hover:text-primary"
+                          className="text-muted-foreground hover:text-primary inline-flex items-center gap-2 transition-colors"
                         >
                           <LinkIcon className="h-4 w-4" />
                         </Link>
                       </div>
-                      <div className="w-full flex-1 bg-secondary p-6">
+                      <div className="bg-secondary w-full flex-1 p-6">
                         <div className="relative min-h-[288px] flex-1">
                           <Image
                             src={project.image}
@@ -136,7 +136,7 @@ export const Portfolio = () => {
 
         {projects.length > 2 && (
           <div
-            className={`${isInView ? 'mt-8 animate-fade-up text-center animate-delay-700' : 'hidden'}`}
+            className={`${isInView ? 'animate-fade-up animate-delay-700 mt-8 text-center' : 'hidden'}`}
           >
             <Button
               variant="outline"

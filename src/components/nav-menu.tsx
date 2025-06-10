@@ -12,7 +12,7 @@ import {
   SheetTrigger,
 } from '@/components/ui/sheet';
 
-import { ThemeToggle } from './theme/theme-toggle';
+import { ModeToggle } from './theme/theme-toggle';
 
 export function NavMenu() {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -26,7 +26,7 @@ export function NavMenu() {
   ];
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/95 px-4 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <header className="bg-background/95 supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50 w-full border-b px-4 backdrop-blur">
       <div className="container mx-auto flex h-16 items-center">
         <div className="mr-4 flex">
           <Link
@@ -43,12 +43,12 @@ export function NavMenu() {
             <Link
               key={item.label}
               href={item.href}
-              className="text-sm font-medium transition-colors hover:text-primary"
+              className="hover:text-primary text-sm font-medium transition-colors"
             >
               {item.label}
             </Link>
           ))}
-          <ThemeToggle />
+          <ModeToggle />
           <Button asChild>
             <Link
               href="/documents/curriculum-vinicius-bastazin.pdf"
@@ -80,7 +80,7 @@ export function NavMenu() {
                   <a
                     key={item.label}
                     href={item.href}
-                    className="text-lg font-medium transition-colors hover:text-primary"
+                    className="hover:text-primary text-lg font-medium transition-colors"
                     onClick={() => setIsOpen(false)}
                   >
                     {item.label}

@@ -66,7 +66,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-br" className={inter.className}>
+    <html lang="pt-br" className={inter.className} suppressHydrationWarning>
       <body className="min-h-screen antialiased">
         <Suspense fallback={<LoadingPage />}>
           <Providers>

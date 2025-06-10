@@ -4,9 +4,9 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { ChevronDown, Search } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useTheme } from 'next-themes';
 import * as React from 'react';
 
-import { useTheme } from '@/components/theme/theme-provider';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import {
@@ -68,14 +68,14 @@ export const Skills = () => {
   return (
     <section id="skills" ref={sectionRef} className="flex h-full py-20">
       <div className="mx-auto max-w-4xl">
-        <div className="mb-8 animate-fade-right text-center">
-          <Badge variant="secondary" className="mb-4">
+        <div className="animate-fade-right mb-8 text-center">
+          <Badge variant="outline" className="mb-4">
             Skills
           </Badge>
           <h2 className="mb-4 text-3xl font-bold">
             Habilidades e Tecnologias que São Minha Paixão e Especialidade
           </h2>
-          <p className="mb-6 text-muted-foreground">
+          <p className="text-muted-foreground mb-6">
             Explore minhas competências técnicas e ferramentas favoritas
           </p>
           <div className="mb-6 flex flex-col justify-center gap-4 sm:flex-row">
@@ -85,7 +85,7 @@ export const Skills = () => {
               value={searchTerm}
               onChange={e => setSearchTerm(e.target.value)}
               className="w-full md:max-w-xs"
-              leftIcon={<Search className="h-4 w-4 text-muted-foreground" />}
+              leftIcon={<Search className="text-muted-foreground h-4 w-4" />}
             />
             <Select
               defaultValue={selectedCategory}
@@ -179,13 +179,22 @@ export const Skills = () => {
 
 function SkillCard({ skill }: { skill: Skill }) {
   const { theme } = useTheme();
+  const [mounted, setMounted] = React.useState(false);
+
+  React.useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    return null;
+  }
 
   return (
     <Tooltip>
       <TooltipTrigger asChild>
         <Link href={skill.link} target="_blank">
           <motion.div
-            className="flex cursor-pointer flex-col items-center rounded-lg bg-card p-4 transition-colors duration-300 hover:bg-accent"
+            className="bg-card hover:bg-accent flex cursor-pointer flex-col items-center rounded-lg p-4 transition-colors duration-300"
             variants={{
               hidden: { opacity: 0, y: 20 },
               visible: { opacity: 1, y: 0 },
@@ -202,7 +211,7 @@ function SkillCard({ skill }: { skill: Skill }) {
                 className="h-full w-full object-contain transition-opacity duration-300 group-hover:opacity-80"
               />
               <motion.div
-                className="absolute inset-0 rounded-full bg-primary/10"
+                className="bg-primary/10 absolute inset-0 rounded-full"
                 initial={{ scale: 0 }}
                 whileHover={{ scale: 1 }}
                 transition={{ type: 'spring', stiffness: 300, damping: 20 }}

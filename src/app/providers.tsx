@@ -1,6 +1,6 @@
 'use client';
 
-import { ThemeProvider } from '@/components/theme/theme-provider';
+import { ThemeProvider } from '@/components/theme-provider';
 import { TooltipProvider } from '@/components/ui/tooltip';
 
 interface ProvidersProps {
@@ -9,7 +9,12 @@ interface ProvidersProps {
 
 export function Providers({ children }: ProvidersProps) {
   return (
-    <ThemeProvider defaultTheme="dark" storageKey="mind-schedule-theme">
+    <ThemeProvider
+      attribute="class"
+      defaultTheme="system"
+      enableSystem
+      disableTransitionOnChange
+    >
       <TooltipProvider>{children}</TooltipProvider>
     </ThemeProvider>
   );

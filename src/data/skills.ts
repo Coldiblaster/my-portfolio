@@ -81,6 +81,15 @@ export const allSkills: Skill[] = [
     link: 'https://www.mongodb.com/',
   },
   {
+    name: 'GraphQL',
+    iconLight: '/icons/light/graphql.svg',
+    iconDark: '/icons/dark/graphql.svg',
+    category: 'frontend',
+    description:
+      'Linguagem de consulta para APIs que permite buscar exatamente os dados necessários, otimizando a comunicação cliente-servidor.',
+    link: 'https://graphql.org/',
+  },
+  {
     name: 'Sass',
     iconLight: '/icons/light/sass.svg',
     iconDark: '/icons/dark/sass.svg',

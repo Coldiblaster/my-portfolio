@@ -33,7 +33,7 @@ export function ScrollToTop() {
       {visible && (
         <button
           onClick={scrollToTop}
-          className="fixed bottom-4 right-4 z-50 h-10 w-10 animate-fade rounded-full bg-secondary shadow-lg"
+          className="animate-fade bg-secondary fixed right-4 bottom-4 z-50 h-10 w-10 rounded-full shadow-lg"
         >
           <LucideArrowUp className="mx-auto" size={18} />
         </button>
