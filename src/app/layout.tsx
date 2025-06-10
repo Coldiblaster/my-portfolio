@@ -58,6 +58,9 @@ export const metadata: Metadata = {
   ],
   appleWebApp: true,
   applicationName: 'Vinícius Bastazin',
+  verification: {
+    google: 'OAX_26lblD3l_QOWRAmX4ujfVAflNwXTxo2Yf0iH7io',
+  },
 };
 
 export default function RootLayout({
