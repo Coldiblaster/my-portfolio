@@ -6,7 +6,7 @@ import { Skills } from '@/containers/home/skils';
 
 export default function Home() {
   return (
-    <div className="h-full w-full bg-background px-4">
+    <div className="bg-background h-full w-full px-4">
       <Hero />
       <Skills />
       <Experience />
