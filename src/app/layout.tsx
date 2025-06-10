@@ -4,6 +4,7 @@ import { Analytics } from '@vercel/analytics/next';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import type { Metadata, Viewport } from 'next';
 import { Inter } from 'next/font/google';
+import Script from 'next/script';
 import { Suspense } from 'react';
 
 import { Footer } from '@/components/footer';
@@ -32,18 +33,18 @@ export const metadata: Metadata = {
   title:
     'Vinícius Bastazin || Desenvolvedor Frontend - React, Next.js, React Native',
   description:
-    'Site profissional de Vinícius Bastazin. Freelancer Frontend com mais de 6 anos de experiência, especializado em React, Next.js, APIs escaláveis e otimização de performance. Freelance em soluções web e mobile.',
+    'Site profissional de Vinícius Bastazin. Freelancer Frontend com mais de 7 anos de experiência, especializado em React, Next.js, APIs escaláveis e otimização de performance. Freelance em soluções web e mobile.',
   keywords:
     'desenvolvedor de software, freelancer React, freelancer front-end, freelancer React Native, Next.js, desenvolvimento de sites, APIs escaláveis, otimização de performance, SEO, desenvolvimento de aplicativos móveis, desenvolvimento web, integração com CMS, Prismic, Firebase, Tailwind CSS, Styled Components, desenvolvimento responsivo, desenvolvimento de sistemas, criação de aplicativos, testes unitários, gerenciamento de estado, micro front-end, monorepo, AWS, Google Cloud, Docker, TypeScript, Node.js, Nest.js, GraphQL, RESTful APIs, Scrum, Kanban, desenvolvedor de interfaces reativas, React Hooks, Figma, desenvolvimento ágil.',
   robots: 'index, follow',
   openGraph: {
-    title: 'Vinícius Bastazin - Desenvolvedor Full Stack Freelancer',
+    title: 'Vinícius Bastazin - Desenvolvedor Frontend',
     description:
       'Portfólio de Vinícius Bastazin, desenvolvedor especializado em React.js, Next.js, React Native e soluções web personalizadas.',
     images: [
       {
         url: 'https://viniciusbastazin.vercel.app/avatar-desk.png',
-        alt: 'Foto de Vinícius Bastazin - Desenvolvedor Full Stack Freelancer',
+        alt: 'Foto de Vinícius Bastazin - Desenvolvedor Frontend',
         width: 1200,
         height: 630,
       },
@@ -68,9 +69,30 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const jsonLdPerson = {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    name: 'Vinícius Bastazin',
+    url: 'https://viniciusbastazin.vercel.app/',
+    jobTitle: 'Desenvolvedor Frontend',
+    sameAs: [
+      'https://www.linkedin.com/in/vbastazin/',
+      'https://github.com/Coldiblaster',
+    ],
+  };
+
   return (
     <html lang="pt-br" className={inter.className} suppressHydrationWarning>
       <body className="min-h-screen antialiased">
+        <Script
+          id="ld-person"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(jsonLdPerson).replace(/</g, '\\u003c'),
+          }}
+          strategy="beforeInteractive"
+        />
+
         <Suspense fallback={<LoadingPage />}>
           <Providers>
             <NavMenu />

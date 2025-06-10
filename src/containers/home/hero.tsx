@@ -17,12 +17,12 @@ export const Hero = () => {
           </h1>
           <div className="flex flex-col gap-2">
             <p className="animate-fade-right animate-delay-100">
-              Sou um desenvolvedor full stack especializado em React.js e
-              Node.js, dedicado a criar experiências digitais excepcionais que
-              sejam rápidas, acessíveis, visualmente atraentes e responsivas.
-              Com mais de 7 anos de atuação no desenvolvimento de aplicações
-              web, mantenho a mesma paixão e entusiasmo do primeiro dia, sempre
-              buscando inovação e qualidade em cada projeto.
+              Sou um desenvolvedor front end especializado em React.js, dedicado
+              a criar experiências digitais excepcionais que sejam rápidas,
+              acessíveis, visualmente atraentes e responsivas. Com mais de 7
+              anos de atuação no desenvolvimento de aplicações web, mantenho a
+              mesma paixão e entusiasmo do primeiro dia, sempre buscando
+              inovação e qualidade em cada projeto.
             </p>
             <p className="animate-fade-right animate-delay-200">
               Acredito que tecnologia é uma ferramenta para conectar pessoas, e
