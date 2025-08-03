@@ -1,24 +1,46 @@
-<h1>
-    My Portfolio
-</h1>
+<h1 align="center">My Portfolio</h1>
 
-## 📚 Index
+<p align="center">
+  <img src="https://i.ibb.co/rK8LKWrr/2025-08-03-14-51.jpg" alt="Portfolio Preview" width="80%" />
+</p>
 
-- [:pushpin: Introduction](#pushpin-introduction)
-- [:warning: Prerequisites](#warning-prerequisites)
-  - [:arrow\_forward: How to run](#arrow_forward-how-to-run)
-  - [:open\_file\_folder: Languages and dependencies](#open_file_folder-languages-and-dependencies)
+<p align="center">
+  <b>Portfólio pessoal desenvolvido com Next.js 15, TailwindCSS e TypeScript, apresentando experiências, habilidades, projetos e informações de contato.</b>
+</p>
 
-# :pushpin: Introduction
+---
 
-Projeto desenvolvido com NextJs 15 e tailwindcss totalmente responsiva.
+## 📚 Índice
 
-# :warning: Prerequisites
+- [📌 Introdução](#-introdução)
+- [⚙️ Pré-requisitos](#️-pré-requisitos)
+- [▶️ Como rodar](#-como-rodar)
+- [📦 Tecnologias e dependências](#-tecnologias-e-dependências)
+- [🌐 Deploy](#-deploy)
+- [👨‍💻 Autor](#-autor)
 
-- [x] [Git](https://git-scm.com)
-- [x] [npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
+---
 
-## :arrow_forward: How to run
+## 📌 Introdução
+
+Este é meu portfólio pessoal, onde apresento minha trajetória como desenvolvedor frontend com foco em React, Next.js e arquitetura de interfaces performáticas.
+
+O projeto é totalmente responsivo, com design moderno, animações suaves e foco em acessibilidade.  
+A proposta é criar uma vitrine técnica e visual, tanto para recrutadores quanto para networking.
+
+---
+
+## ⚙️ Pré-requisitos
+
+Certifique-se de ter as seguintes ferramentas instaladas:
+
+- [Git](https://git-scm.com)
+- [Node.js e npm](https://nodejs.org)
+- [pnpm](https://pnpm.io/) (opcional, mas recomendado)
+
+---
+
+## ▶️ Como rodar
 
 ```bash
 # Clone o repositório
@@ -33,10 +55,20 @@ $ pnpm dev
 $ http://localhost:3000/
 ```
 
-## :open_file_folder: Languages and dependencies
+## 📦 Tecnologias e dependências
 
 > [![React](https://img.shields.io/badge/React-000?style=for-the-badge&logo=react)](https://pt-br.reactjs.org/docs/getting-started.html)
 >
 > [![NextJs](https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)](https://nextjs.org/)
 >
 > [![Tailwindcss](https://img.shields.io/badge/tailwindcss-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
+
+
+## 🌐 Deploy
+
+Portfólio disponível online:
+🔗 https://viniciusbastazin.vercel.app
+
+## 👨‍💻 Autor
+
+Desenvolvido por [ Vinicius Bastazin Araujo](https://www.linkedin.com/in/vbastazin/)
